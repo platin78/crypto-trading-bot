@@ -1,7 +1,7 @@
 >>> import time
 >>> from binance.client import Client
->>> apikey = "AxrwnKbyXrhFAdfJMEe2UADN17C9TOcvnOfCdmcDDpfxRQqOYTk5KsMvmWHg7WYI"
->>> secretkey = "JkIlzMQDJylRixi1VHAYhhGEu0dq6aMpNbm3qGBBjMX0fj98kj19WEMFkdRZDtqf"
+>>> apikey = "API key to be put right here"
+>>> secretkey = "secrert key to be put right here"
 >>> client = Client(apikey,secretkey)
 >>> symbol = ["BTCUSDT","ETHUSDT","BNBUSDT","QTUMUSDT","OMGUSDT"]
 >>> intrade = [0,0,0,0,0]
