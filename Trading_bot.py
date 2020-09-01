@@ -1,18 +1,18 @@
->>> import time
->>> from binance.client import Client
->>> apikey = "API key to be put right here"
->>> secretkey = "secrert key to be put right here"
->>> client = Client(apikey,secretkey)
->>> symbol = ["BTCUSDT","ETHUSDT","BNBUSDT","QTUMUSDT","OMGUSDT"]
->>> intrade = [0,0,0,0,0]
->>> sellprice = [-1,-1,-1,-1,-1]
->>> f = open("current trading data.txt","r")
->>> for x in range(5):
+import time
+from binance.client import Client
+apikey = "API key to be put right here"
+secretkey = "secrert key to be put right here"
+client = Client(apikey,secretkey)
+symbol = ["BTCUSDT","ETHUSDT","BNBUSDT","QTUMUSDT","OMGUSDT"]
+intrade = [0,0,0,0,0]
+sellprice = [-1,-1,-1,-1,-1]
+f = open("current trading data.txt","r")
+for x in range(5):
 	f.readline()
 	intrade[x]=bool(int(f.readline()))
 	sellprice[x]=float(f.readline())
->>> f.close()
->>> def look_at_me_baby_i_am_rich():
+f.close()
+def look_at_me_baby_i_am_rich():
 	for i in range(5):
 		try:
 			klines = client.get_historical_klines(symbol[i], Client.KLINE_INTERVAL_1MINUTE, "4 hours ago UTC")
@@ -75,4 +75,4 @@
 				f.close()
 	time.sleep(10)
 	look_at_me_baby_i_am_rich()
->>> look_at_me_baby_i_am_rich()
+look_at_me_baby_i_am_rich()
