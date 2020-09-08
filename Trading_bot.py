@@ -45,6 +45,10 @@ def look_at_me_baby_i_am_rich():
 
 			##buy condition
 			if(rsi[1]<30 and rsi[0]>=30 and curr<sma):
+				try:
+					client.order_market_buy(symbol= symbol[i], quantity= 50/curr)
+				except:
+					look_at_me_baby_i_am_rich()
 				print("bought "+symbol[i]+ " for : "+ str(curr) +"\n"+time.strftime("%D  %I:%M:%S %p",time.localtime())+"\n*****\n")
 				f = open("trading history.txt","a+")
 				f.write("bought "+symbol[i]+ " for : "+ str(curr) +"\n"+time.strftime("%D  %I:%M:%S %p",time.localtime())+"\n*****\n")
