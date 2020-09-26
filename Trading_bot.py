@@ -65,6 +65,10 @@ def look_at_me_baby_i_am_rich():
 		elif(intrade[i]==1):
 			##sell condition 
 			if (curr >= sellprice[i]):
+				try:
+					client.order_market_buy(symbol= symbol[i], quantity= 50/curr)
+				except:
+					look_at_me_baby_i_am_rich()
 				print("sold "+symbol[i]+ " for : "+ str(curr) +"\n"+time.strftime("%D  %I:%M:%S %p",time.localtime())+"\n*****\n")
 				f = open("trading history.txt","a+")
 				f.write("sold "+symbol[i]+ " for : "+ str(curr) +"\n"+time.strftime("%D  %I:%M:%S %p",time.localtime())+"\n*****\n")
